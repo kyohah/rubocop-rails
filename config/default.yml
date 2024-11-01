@@ -121,6 +121,15 @@ Rails/ActionOrder:
   Include:
     - app/controllers/**/*.rb
 
+Rails/ActiveJobIntilize:
+  Description: 'Use `before_perform` instead of `initialize` in Active Job.'
+  Enabled: pending
+  SafeAutoCorrect: false
+  VersionAdded: <<next>>
+  VersionChanged: <<next>>
+  Include:
+    - app/jobs/**/*.rb
+
 Rails/ActiveRecordAliases:
   Description: >-
                   Avoid Active Record aliases:
