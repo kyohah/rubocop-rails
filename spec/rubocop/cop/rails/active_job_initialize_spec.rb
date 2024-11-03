@@ -5,7 +5,7 @@ RSpec.describe RuboCop::Cop::Rails::ActiveJobInitialize, :config do
     it 'registers an offense' do
       expect_offense(<<~RUBY)
         class MyJob < ApplicationJob
-          def initialize
+          def initialize(...)
           ^^^^^^^^^^^^^^ Avoid using `initialize` in ActiveJob. Move initialization logic to `before_perform` or `perform`.
             JobLogger.info('Job started')
             super
@@ -23,7 +23,7 @@ RSpec.describe RuboCop::Cop::Rails::ActiveJobInitialize, :config do
     it 'does not register an offense' do
       expect_no_offenses(<<~RUBY)
         class MyService
-          def initialize
+          def initialize(...)
             JobLogger.info('Job started')
           end
         end

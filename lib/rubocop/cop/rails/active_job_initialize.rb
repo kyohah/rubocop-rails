@@ -9,7 +9,7 @@ module RuboCop
       # @example
       #   # bad
       #   class MyJob < ApplicationJob
-      #     def initialize
+      #     def initialize(...)
       #       JobLogger.info('Job started')
       #       super
       #     end
